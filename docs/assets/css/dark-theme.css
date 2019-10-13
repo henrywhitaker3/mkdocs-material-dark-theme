@@ -64,6 +64,29 @@ html body .md-typeset .md-source-file {
     background-color: #585858 !important;
 }
 
+.md-typeset mark {
+    background-color: rgba(255, 235, 59, 0.73) !important;
+    box-shadow: 0.25em 0 0 rgba(255, 235, 59, 0.73), -0.25em 0 0 rgba(255, 235, 59, 0.73) !important;
+}
+
+.md-typeset del.critic {
+    background-color: #9e0000 !important;
+    box-shadow: 0.25em 0 0 #9e0000, -0.25em 0 0 #9e0000 !important;
+}
+
+.md-typeset ins.critic {
+    background-color: #008e00 !important;
+    box-shadow: 0.25em 0 0 #008e00, -0.25em 0 0 #008e00 !important;
+}
+
+.md-typeset .critic.comment {
+    color: #000000 !important;
+}
+
+.md-typeset .critic.comment:before {
+    color: #000000 !important;
+}
+
 /* Small devices */
 @media only screen and (max-width: 76.1875em) {
     .md-nav {
