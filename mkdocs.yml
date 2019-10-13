@@ -65,6 +65,8 @@ plugins:
       minify_html: true
 
 # Customization
+extra_css:
+  - 'assets/css/dark-theme.css'
 extra:
   social:
     - type: globe
