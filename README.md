@@ -8,7 +8,12 @@ A live demo is hosted on github pages [here](https://henrywhitaker3.github.io/mk
 
 ## Using the dark theme
 
-Download [this](https://raw.githubusercontent.com/henrywhitaker3/mkdocs-material-dark-theme/master/docs/assets/css/dark-theme.css) CSS file and place it wherever you want in your MkDocs `docs` folder, in this example, I chose `assets/css/dark-theme.css`
+Download [this](https://raw.githubusercontent.com/henrywhitaker3/mkdocs-material-dark-theme/master/docs/assets/css/dark-theme.css) CSS file and place it wherever you want in your MkDocs `docs` folder, in this example, I chose `assets/css/dark-theme.css`, then you need to add a few lines to your `mkdocs.yml` file:
+
+```YAML
+extra_css:
+  - 'assets/css/dark-theme.css'
+```
 
 ## Other people's stuff I've used
 
