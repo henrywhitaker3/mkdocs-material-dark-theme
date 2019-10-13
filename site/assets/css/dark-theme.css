@@ -54,7 +54,8 @@ blockquote {
     color: #f8f8f2 !important;
 }
 
-.md-typeset .admonition {
+.md-typeset .admonition,
+.md-typeset .md-typeset__table table {
     background-color: #00000052;
 }
 
