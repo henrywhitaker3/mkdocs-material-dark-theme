@@ -125,6 +125,30 @@ html body .md-typeset .md-source-file {
     color: white !important;
 }
 
+[data-md-color-primary=indigo] .md-typeset a {
+    color: #5e71dc !important;
+}
+
+[data-md-color-primary=purple] .md-typeset a {
+    color: #c352d6 !important;
+}
+
+[data-md-color-primary=deep-purple] .md-typeset a {
+    color: #9a6bea !important;
+}
+
+[data-md-color-primary=brown] .md-typeset a {
+    color: #c58d78 !important;
+}
+
+[data-md-color-primary=grey] .md-typeset a {
+    color: #a9a7a7 !important;
+}
+
+[data-md-color-primary=blue-grey] .md-typeset a {
+    color: #678592 !important;
+}
+
 /* Code block changes taken from: https://github.com/jwarby/jekyll-pygments-themes */
 .codehilite pre{ background-color: #272822 !important; color: #d9d9d9; }
 .codehilite .hll { background-color: #272822; }
