@@ -226,4 +226,9 @@
     .md-typeset .highlight .gi {
         background-color: #2b3a2b;
     }
+
+    .md-typeset .superfences-content,
+    .md-typeset .codehilite {
+        background-color: #0000 !important;
+    }
 }
