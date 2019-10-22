@@ -215,4 +215,15 @@
     .codehilite .gu { color: #75715e; } /* Generic.Subheading & Diff Unified/Comment? */
     .codehilite .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
     .codehilite .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
+
+    .codehilite .gd,
+    .md-typeset .highlight .gd {
+        background-color: #6b0e0e66;
+        color: #ff5a5a;
+    }
+
+    .codehilite .gi,
+    .md-typeset .highlight .gi {
+        background-color: #2b3a2b;
+    }
 }
