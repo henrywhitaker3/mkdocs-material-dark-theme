@@ -242,14 +242,10 @@
     }
 
     .md-typeset .tabbed-set > input:checked + label {
-        color: var(--md-accent-fg-color--light) !important;
+        color: var(--md-accent-fg-color) !important;
     }
-
-    div.tabbed-set {
-        background-color: var(--md-primary-fg-color);
-    }
-
-    div.tabbed-set div.tabbed-content {
-        background-color: #282b36;
+      
+    .md-typeset .tabbed-set > label {
+        color: #777 !important;
     }
 }

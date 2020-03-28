@@ -1,21 +1,90 @@
-# MkDocs Material Theme
+[![Github Action][action-image]][action-link]
+[![Downloads][downloads-image]][downloads-link]
+[![Gitter][gitter-image]][gitter-link]
+[![PyPI][pypi-image]][pypi-link]
+[![dependabot][dependabot-image]][dependabot-link]
 
-This is based on  the squidfunk's [material theme](https://github.com/squidfunk/mkdocs-material) for [MkDocs](https://www.mkdocs.org). It builds on the material theme by adding a dark mode, where all the changes to the CSS are in [this file](https://github.com/henrywhitaker3/mkdocs-material-dark-theme/blob/master/docs/assets/css/dark-theme.css). 
+  [action-image]: https://github.com/squidfunk/mkdocs-material/workflows/ci/badge.svg?branch=master
+  [action-link]: https://github.com/squidfunk/mkdocs-material/actions
+  [downloads-image]: https://img.shields.io/pypi/dm/mkdocs-material.svg
+  [downloads-link]: https://pypistats.org/packages/mkdocs-material
+  [gitter-image]: https://badges.gitter.im/squidfunk/mkdocs-material.svg
+  [gitter-link]: https://gitter.im/squidfunk/mkdocs-material
+  [pypi-image]: https://img.shields.io/pypi/v/mkdocs-material.svg
+  [pypi-link]: https://pypi.python.org/pypi/mkdocs-material
+  [dependabot-image]: https://img.shields.io/badge/dependabot-enabled-06f.svg
+  [dependabot-link]: https://dependabot.com
 
-A live demo is hosted on github pages [here](https://henrywhitaker3.github.io/mkdocs-material-dark-theme/)
+# Material for MkDocs
 
-![screenshot](https://raw.githubusercontent.com/henrywhitaker3/mkdocs-material-dark-theme/master/docs/assets/images/demo%20screenshot.png)
+> ⚠️ __Help test [Material 5](https://github.com/squidfunk/mkdocs-material/issues/1498)!__
 
-## Using the dark theme
+A Material Design theme for [MkDocs][1].
 
-Download [this](https://raw.githubusercontent.com/henrywhitaker3/mkdocs-material-dark-theme/master/docs/assets/css/dark-theme.css) CSS file and place it wherever you want in your MkDocs `docs` folder, in this example, I chose `assets/css/dark-theme.css`, then you need to add a few lines to your `mkdocs.yml` file:
+[![Material for MkDocs](https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/docs/assets/images/material.png)][2]
 
-```YAML
-extra_css:
-  - 'assets/css/dark-theme.css'
+  [1]: https://www.mkdocs.org
+  [2]: https://squidfunk.github.io/mkdocs-material/
+
+## Quick start
+
+Install the latest version of Material with `pip`:
+
+``` sh
+pip install mkdocs-material
 ```
 
-## Other people's stuff I've used
+Add the following line to `mkdocs.yml`:
 
-- [squidfunk](https://githumb.com/squidfunk) - the material theme available [here](https://github.com/squidfunk/mkdocs-material)
-- [jwarby](https://github.com/jwarby) - the code-block dark theme CSS available [here](https://github.com/jwarby/jekyll-pygments-themes)
+``` yaml
+theme:
+  name: material
+```
+
+## What to expect
+
+* Responsive design and fluid layout for all kinds of screens and devices,
+  designed to serve your project documentation in a user-friendly way in 41
+  languages with optimal readability.
+
+* Easily customizable primary and accent color, fonts, favicon and logo;
+  straight forward localization through theme extension; integrated with Google
+  Analytics, Disqus and GitHub.
+
+* Well-designed search interface accessible through hotkeys (<kbd>F</kbd> or
+  <kbd>S</kbd>), intelligent grouping of search results, search term
+  highlighting and lazy loading.
+
+For detailed installation instructions and a demo, visit
+https://squidfunk.github.io/mkdocs-material/
+
+## Support
+
+If you're happy with Material for MkDocs and feel like giving something back,
+you may check out squidfunk's [Amazon wish list][3].
+
+  [3]: https://amzn.to/353WRpj
+
+## License
+
+**MIT License**
+
+Copyright (c) 2016-2020 Martin Donath
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
