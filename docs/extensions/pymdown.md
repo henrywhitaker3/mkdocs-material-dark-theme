@@ -1,22 +1,15 @@
 # PyMdown Extensions
 
 [PyMdown Extensions][1] is a collection of Markdown extensions that add some
-great features to the standard Markdown library. For this reason, the
-**installation of this package is highly recommended** as it's well-integrated
-with the Material theme.
+great missing features to the standard Markdown library. A compatible version
+is always included with the theme.
 
-  [1]: http://facelessuser.github.io/pymdown-extensions/
+  [1]: https://facelessuser.github.io/pymdown-extensions/
 
-## Installation
-
-The PyMdown Extensions package can be installed with the following command:
-
-``` sh
-pip install pymdown-extensions
-```
+## Configuration
 
 The following list of extensions that are part of the PyMdown Extensions
-package are recommended to be used together with the Material theme:
+package are recommended to be used together with Material for MkDocs:
 
 ``` yaml
 markdown_extensions:
@@ -27,6 +20,7 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
   - pymdownx.inlinehilite
   - pymdownx.magiclink
@@ -35,6 +29,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.tabbed
   - pymdownx.tilde
 ```
 
@@ -44,23 +39,22 @@ markdown_extensions:
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-[Arithmatex][2] integrates Material with [MathJax][3] which parses
+[Arithmatex][2] integrates Material for MkDocs with [MathJax][3] which parses
 block-style and inline equations written in TeX markup and outputs them in
 mathematical notation. See [this thread][4] for a short introduction and quick
 reference on how to write equations in TeX syntax.
 
 Besides activating the extension in the `mkdocs.yml`, the MathJax JavaScript
-runtime needs to be included. This must be done with
-[additional JavaScript][5]:
+runtime needs to be included. This can be done with [additional JavaScript][5]:
 
 ``` yaml
 extra_javascript:
-  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
 ```
 
 If you want to override the default MathJax configuration, you can do this by
-adding another JavaScript file **before** the MathJax runtime in
-`extra_javascript` which contains your MathJax configuration, e.g.:
+adding another JavaScript file **before** the MathJax runtime which contains
+the MathJax configuration, e.g.:
 
 ``` js
 window.MathJax = {
@@ -85,17 +79,17 @@ window.MathJax = {
 };
 ```
 
-In your `mkdocs.yml`, include it with:
+Then, add the following lines to `mkdocs.yml`:
 
 ``` yaml
 extra_javascript:
-  - 'javascripts/extra.js'
-  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  - javascripts/extra.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
 ```
 
   [2]: https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/
   [3]: https://www.mathjax.org/
-  [4]: http://meta.math.stackexchange.com/questions/5020/
+  [4]: https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
   [5]: ../customization.md#additional-javascript
 
 #### Blocks
@@ -118,7 +112,7 @@ $$
 
 #### Inline
 
-Inline equations need to be enclosed in `:::tex $...$`:
+Inline equations must be enclosed in `:::tex $...$`:
 
 Example:
 
@@ -169,7 +163,7 @@ tags on separate lines and adding new lines between the tags and the content.
 
 ### Details
 
-[Details][11] adds collapsible [Admonition-style blocks][12] which can contain
+[Details][11] adds [collapsible Admonition blocks][12] which can contain
 arbitrary content using the HTML5 `details` and `summary` tags. Additionally,
 all Admonition qualifiers can be used, e.g. `note`, `question`, `warning` etc.:
 
@@ -178,74 +172,129 @@ all Admonition qualifiers can be used, e.g. `note`, `question`, `warning` etc.:
     Yes.
 
   [11]: https://facelessuser.github.io/pymdown-extensions/extensions/details/
-  [12]: admonition.md
+  [12]: ../admonition/#collapsible-blocks
 
-### Emoji
+### Emoji :tada:
 
-[Emoji][13] adds the ability to insert a :shit:-load of emojis that we use in
-our daily lives. See the [EmojiOne demo][14] for a list of all available
-emojis. Happy scrolling :tada:
+[Emoji][13] adds the ability to insert, well, emojis! :smile:
+
+By default, [Emoji][13] uses JoyPixles' emoji under the former name EmojiOne.
+Recent versions of the extension lock support to an older version (2.2.7) due
+to JoyPixels' newer, less permissible licenses included in later releases. This
+restricts support to Unicode 9. To get the latest support for the current
+Unicode version, you can use Twemoji instead which has a much more permissable
+license. Simply override the default emoji index being used:
+
+``` yaml
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+```
+
+To view all the available short names and emoji available, see
+[Emoji's documentation][18] on your chosen index which includes links to the
+files containing the short names and emoji associated with each supported
+index.
 
 !!! warning "Legal disclaimer"
 
-    Material has no affiliation with [EmojiOne][15] which is released under
-    [CC BY 4.0][16]. When including EmojiOne images or CSS, please read the
-    [EmojiOne license][17] to ensure proper usage and attribution.
+    Material has no affiliation with [JoyPixles][15] or [Twemoji][14], both
+    of which are licensed under [CC BY 4.0][16]. When including images or CSS
+    from either provider, please read their licenses to ensure proper
+    attribution: [EmojiOne][17] or [Twemoji][14].
 
   [13]: https://facelessuser.github.io/pymdown-extensions/extensions/emoji/
-  [14]: https://emoji.codes/
-  [15]: http://emojione.com
+  [14]: https://twemoji.twitter.com/
+  [15]: https://www.joypixels.com/
   [16]: https://creativecommons.org/licenses/by/4.0/legalcode
-  [17]: http://emojione.com/licensing/
+  [17]: https://github.com/joypixels/emojione#emojione-version-2
+  [18]: https://facelessuser.github.io/pymdown-extensions/extensions/emoji/#default-emoji-indexes
 
 ### InlineHilite
 
-[InlineHilite][18] adds support for inline code highlighting. It's useful for
+[InlineHilite][19] adds support for inline code highlighting. It's useful for
 short snippets included within body copy, e.g. `#!js var test = 0;` and can be
-achieved by prefixing inline code with a shebang and language identifier,
+activated by prefixing inline code with a shebang and language identifier,
 e.g. `#!js`.
 
-  [18]: https://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/
+  [19]: https://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/
 
 ### MagicLink
 
-[MagicLink][19] detects links in Markdown and auto-generates the necessary
+[MagicLink][20] detects links in Markdown and auto-generates the necessary
 markup, so no special syntax is required. It auto-links `http[s]://` and
 `ftp://` links, as well as references to email addresses.
 
-  [19]: https://facelessuser.github.io/pymdown-extensions/extensions/magiclink/
+  [20]: https://facelessuser.github.io/pymdown-extensions/extensions/magiclink/
 
 ### Mark
 
-[Mark][20] adds the ability to ==highlight text== like it was marked with a
+[Mark][21] adds the ability to ==highlight text== like it was marked with a
 ==text marker==. The portion of text that should be highlighted must be
 enclosed in two equal signs `==...==`.
 
-  [20]: https://facelessuser.github.io/pymdown-extensions/extensions/mark/
+  [21]: https://facelessuser.github.io/pymdown-extensions/extensions/mark/
 
 ### SmartSymbols
 
-[SmartSymbols][21] converts markup for special characters into their
+[SmartSymbols][22] converts markup for special characters into their
 corresponding symbols, e.g. arrows (<--, -->, <-->), trademark and copyright
 symbols ((c), (tm), (r)) and fractions (1/2, 1/4, ...).
 
-  [21]: https://facelessuser.github.io/pymdown-extensions/extensions/smartsymbols/
+  [22]: https://facelessuser.github.io/pymdown-extensions/extensions/smartsymbols/
 
 ### SuperFences
 
-[SuperFences][22] provides the ability to nest code blocks under blockquotes,
-lists and other block elements, which the [Fenced Code Blocks][23] extension
+[SuperFences][23] provides the ability to nest code blocks under blockquotes,
+lists and other block elements, which the [Fenced Code Blocks][24] extension
 from the standard Markdown library doesn't parse correctly.
 
-SuperFences does also allow [grouping code blocks with tabs][24].
+SuperFences does also allow [grouping code blocks with tabs][25].
 
-  [22]: https://facelessuser.github.io/pymdown-extensions/extensions/superfences/
-  [23]: https://python-markdown.github.io/extensions/fenced_code_blocks/
-  [24]: codehilite.md#grouping-code-blocks
+  [23]: https://facelessuser.github.io/pymdown-extensions/extensions/superfences/
+  [24]: https://python-markdown.github.io/extensions/fenced_code_blocks/
+  [25]: codehilite.md#grouping-code-blocks
+
+### Tabbed
+
+[Tabbed][26] adds support for creating tabbed groups of Markdown content.
+
+Example:
+
+``` markdown
+=== "Fruit List"
+    - :apple: Apple
+    - :banana: Banana
+    - :kiwi: Kiwi
+
+=== "Fruit Table"
+    Fruit           | Color
+    --------------- | -----
+    :apple:  Apple  | Red
+    :banana: Banana | Yellow
+    :kiwi:   Kiwi   | Green
+```
+
+Result:
+
+=== "Fruit List"
+    - :apple: Apple
+    - :banana: Banana
+    - :kiwi: Kiwi
+
+=== "Fruit Table"
+    Fruit           | Color
+    --------------- | -----
+    :apple:  Apple  | Red
+    :banana: Banana | Yellow
+    :kiwi:   Kiwi   | Green
+
+[26]: https://facelessuser.github.io/pymdown-extensions/extensions/superfences/
 
 ### Tasklist
 
-[Tasklist][25] adds support for styled checkbox lists. This is useful for
+[Tasklist][27] adds support for styled checkbox lists. This is useful for
 keeping track of tasks and showing what has been done and has yet to be done.
 Checkbox lists are like regular lists, but prefixed with `[ ]` for empty or
 `[x]` for filled checkboxes.
@@ -278,12 +327,12 @@ Result:
 * [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
 * [ ] Nulla vel eros venenatis, imperdiet enim id, faucibus nisi
 
-[25]: https://facelessuser.github.io/pymdown-extensions/extensions/tasklist/
+[27]: https://facelessuser.github.io/pymdown-extensions/extensions/tasklist/
 
 ### Tilde
 
-[Tilde][26] provides an easy way to ~~strike through~~ cross out text.
+[Tilde][28] provides an easy way to ~~strike through~~ cross out text.
 The portion of text that should be erased must be enclosed in two tildes
 `~~...~~` and the extension will take care of the rest.
 
-  [26]: https://facelessuser.github.io/pymdown-extensions/extensions/tilde/
+[28]: https://facelessuser.github.io/pymdown-extensions/extensions/tilde/

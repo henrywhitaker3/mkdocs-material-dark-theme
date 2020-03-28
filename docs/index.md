@@ -1,3 +1,7 @@
+---
+template: overrides/home.html
+---
+
 # Material <small>for MkDocs</small>
 
 ## Create beautiful project documentation
@@ -19,17 +23,17 @@ Install the latest version of Material with `pip`:
 pip install mkdocs-material
 ```
 
-Append the following line to your project's `mkdocs.yml`:
+Add the following line to `mkdocs.yml`:
 
 ``` yaml
 theme:
-  name: 'material'
+  name: material
 ```
 
 ## What to expect
 
 * Responsive design and fluid layout for all kinds of screens and devices,
-  designed to serve your project documentation in a user-friendly way in 39
+  designed to serve your project documentation in a user-friendly way in 41
   languages with optimal readability.
 
 * Easily customizable primary and accent color, fonts, favicon and logo;
