@@ -241,8 +241,8 @@ td.linenos div.linenodiv {
 }
 
 .md-typeset .tabbed-set > input:checked + label {
-    color: var(--md-accent-fg-color--light) !important;
-  }
+    color: var(--md-accent-fg-color) !important;
+}
   
 .md-typeset .tabbed-set > label {
     color: #777 !important;
