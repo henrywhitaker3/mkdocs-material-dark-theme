@@ -66,7 +66,7 @@ plugins:
 
 # Customization
 extra_css:
-  - 'assets/css/dark-theme.css'
+  - 'assets/css/dark-theme-system.css'
 extra:
   social:
     - type: globe
