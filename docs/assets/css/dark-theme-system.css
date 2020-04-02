@@ -26,6 +26,14 @@
         padding-right: 5px !important;
     }
 
+    a code {
+        color: var(--md-primary-fg-color) !important;
+    }
+    
+    a code:hover {
+        color: var(--md-accent-fg-color) !important;
+    }
+
     blockquote {
         color: #e4e4e4 !important;
     }
