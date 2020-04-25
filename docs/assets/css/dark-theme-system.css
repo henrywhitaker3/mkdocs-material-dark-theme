@@ -256,4 +256,8 @@
     .md-typeset .tabbed-set > label {
         color: #777 !important;
     }
+
+    .md-typeset a:hover {
+        color: var(--md-accent-fg-color) !important;
+    }
 }
